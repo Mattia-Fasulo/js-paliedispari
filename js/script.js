@@ -3,6 +3,14 @@
 const parolaHTML = document.getElementById('parola');
 const buttonHTML = document.querySelector('button');
 const contBtnHTML = document.getElementById('cont-btn')
+const buttonPlayHTML = document.getElementById('btn-play');
+const optionHTML = document.getElementById('option');
+const numeroHTML = document.getElementById('numero');
+const risComputer = document.getElementById('ris-computer');
+const risUtente = document.getElementById('ris-utente');
+const risGioco = document.getElementById('ris-gioco');
+const risSomma = document.getElementById('ris-somma');
+
 
 function isPalindromo() {
     //ripulisco il div che ho creato per stampare il risultato
@@ -31,4 +39,45 @@ function isPalindromo() {
     }
 }
 
+
+function play() {
+    let sceltaUtente = optionHTML.value;
+    let numeroUtente = numeroHTML.value;
+    let numeroComputer = randomNumber(1, 5);
+
+
+    if (numeroUtente < 1 || numeroUtente > 5) {
+        alert('devi inserire un numero tra 1 e 5')
+        numeroHTML.value = '';
+        window.location.reload();
+        return
+    }
+    let somma = parseInt(numeroUtente) + parseInt(numeroComputer);
+    risUtente.innerHTML = 'Il tuo numero:' + ' ' + numeroUtente;
+    risComputer.innerHTML = 'Numero Computer:' + ' ' + numeroComputer;
+    risSomma.innerHTML = 'La somma dei numeri è:' + ' ' + somma;
+
+
+    if (sceltaUtente == 'pari') {
+        if ((somma % 2) == 0) {
+            risGioco.innerHTML = 'Hai vinto!';
+        }
+        else {
+            risGioco.innerHTML = 'Hai Perso!';
+        }
+    }
+
+    else if (sceltaUtente == 'dispari'){
+        if (!(somma % 2) == 0) {
+            risGioco.innerHTML = 'Hai vinto!';
+        }
+        else {
+            risGioco.innerHTML = 'Hai Perso!';
+        }
+
+    }
+
+}
+
+buttonPlayHTML.addEventListener('click', play);
 buttonHTML.addEventListener('click', isPalindromo);
