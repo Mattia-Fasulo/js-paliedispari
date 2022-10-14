@@ -24,18 +24,18 @@
 <body>
 
   <div class="container mt-5">
-    <div class="row flex-column gy-2">
+    <div class="card row flex-column p-2 gy-2">
       <h2>Controlla se una parola è palindroma</h2>
       <div class="col-5">
         <label for="parola" class="d-block fs-5">Inserisci una parola</label>
         <input type="text" name="parola" id="parola" class="p-1">
       </div>
       <div id="cont-btn" class="col-3">
-        <button type="button" class="p-1 d-block">Controlla</button>
+        <button type="button" class="btn btn-dark p-1 d-block">Controlla</button>
       </div>
     </div>
 
-    <div class="row flex-column gy-2 mt-5">
+    <div class="card row flex-column gy-2 mt-5">
       <h2>Sfida il computer a pari e dispari</h2>
       <div class="col-6">
         <label for="pari" class="d-block fs-5">Scegli pari o dispari</label>
@@ -45,8 +45,8 @@
         </select>
         <label for="numero" class="d-block fs-5">Inserisci un numero tra 1 e 5</label>
         <input type="number" name="numero" id="numero" class="p-1 w-25" min="1" max="5" required>
-        <button id="btn-play" type="button" class="mt-2 p-1  d-block">Gioca</button> 
-        <span id="ris-computer" class="d-block"></span>
+        <button id="btn-play" type="button" class="btn btn-dark mt-2 p-1  d-block">Gioca</button> 
+        <span id="ris-computer" class="d-block mt-2"></span>
         <span id="ris-utente" class="d-block"></span>
         <span id="ris-somma" class="d-block"></span>
         <span id="ris-gioco" class="d-block fs-4 text-uppercase"></span>
